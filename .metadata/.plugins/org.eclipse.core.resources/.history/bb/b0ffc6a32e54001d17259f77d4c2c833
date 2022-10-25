@@ -1,0 +1,27 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<form action="">
+<select name="subject">  
+<option value = "PC Architecture">PC Architecture</option>  
+<option value = "PC Hardware 1">PC Hardware 1</option>  
+<option value = "PC Hardware 2">PC Hardware 1</option>  
+<option value = "Microprocessor Interfacing devices & Embedded System">Microprocessor Interfacing devices & Embedded System</option>  
+<option value = "C#">C#</option>  
+<option value = "Data Structures">Data Structures</option> 
+<option value = "Operating System">Operating System</option> 
+<option value = "SQL Server">SQL Server</option> 
+</select>  
+
+</form>
+</center>
+</body>
+</html>

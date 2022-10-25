@@ -1,0 +1,30 @@
+package com.Training.Clg_project;
+
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="CourseList")
+
+public class CourseList {
+	@Id
+	@Column(name="courseno")
+	private String courseno;
+	
+	@Column(name="duration")
+	private int duration;
+	
+	@Column(name="startDate")
+	private Date startDate;
+	
+	@Column(name="endDate")
+	private Date endDate;
+	
+	@Column(name="hod")
+	private String hod;
+}

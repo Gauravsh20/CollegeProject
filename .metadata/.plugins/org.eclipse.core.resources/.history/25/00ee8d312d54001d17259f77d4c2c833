@@ -1,0 +1,31 @@
+package com.Training.Clg_project;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="subjects")
+public class Subjects {
+	
+	@Id
+	@Column(name="subjectId")
+	private int subjectId;
+	
+	@Column(name="year")
+	private int year;
+	
+	@Column(name="instructor")
+	private String instructor;
+	
+	@Column(name="subject")
+	private String subject;
+	
+	@Column(name="theory")
+	private int theory;
+	
+	@Column(name="practical")
+	private int practical;
+
+}

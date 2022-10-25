@@ -1,0 +1,9 @@
+package com.Training.Clg_project;
+
+public class CourseList {
+	private String courseno;
+	private int duration;
+	private Date startDate;
+	private Date endDate;
+	private String hod;
+}

@@ -1,0 +1,30 @@
+package com.Training.Clg_project;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class CourseDAO {
+		SessionFactory sessionFactory;
+	
+	public String generateRoomId() {
+		sessionFactory=SessionHelper.getConnection();
+		Session session;
+		session=sessionFactory.openSession();
+		Criteria cr=session.createCriteria(Room.class);
+		List<CourseList> courselist=cr.list();
+		sessionFactory.close();
+		session.close();
+		if (courselist.size()==0) {
+			return "R001";
+		} else {
+		String roomIds=courselist.get(roomlist.size()-1).getRoomId();
+		int ids = Integer.parseInt(roomIds.substring(1));
+		ids++;
+		String rid=String.format("R%03d",++ids);
+		return rid;
+		}
+	}
+}

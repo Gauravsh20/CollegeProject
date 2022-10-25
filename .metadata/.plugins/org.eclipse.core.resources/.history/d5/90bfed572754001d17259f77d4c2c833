@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center><form action="">
+<h1>Add Course's</h1>
+Enter The Course Duration : 
+<input type="number" name="courseno"/><br/><br/>	
+Start The Course: 
+<input type="Date" name="startDate"/><br/><br/>
+End The Course: 
+<input type="Date" name="endDate"/><br/><br/>
+Enter The HOD Name : 
+<input type="txt" name="hod"/><br/><br/>	
+<input type="Submit" value="Save"/><br/><br/>
+</form></center>
+<c:if test="${param.hod != null }">
+	<jsp:useBean id="beancourse" class="com.Training.Clg_project.CourseList"/>
+	<jsp:useBean id="beanDao" class="com.Training.Clg_project.CourseDAO"/>
+	<fmt:parseDate value="${param.startDate}" pattern="yyyy-MM-dd" var="cd1"/>
+	
+	<c:set var="sqlDate1" value="${bookingDAO.convertDate(cd1)}" />
+	<c:out value="${sqlDate1}"/>
+	
+	<fmt:parseDate value="${param.endDate}" pattern="yyyy-MM-dd" var="cd2"/>
+	<c:set var="sqlDate2" value="${bookingDAO.convertDate(cd2)}"  />
+	<c:out value="${sqlDate2}"/>
+	
+	<jsp:setProperty property="startDate" name="beancourse" value="${sqlDate1}"/>
+	<jsp:setProperty property="endDate" name="beancourse" value="${sqlDate2}"/>
+	<c:out value="${bookingDAO.AddBooking(booking)}"/>
+	<jsp:setProperty property="*" name="beancourse" />
+	
+	<c:out value="${beanDao.Addcourse(beancourse)}"></c:out>
+	
+	</c:if>
+
+</body>
+</html>

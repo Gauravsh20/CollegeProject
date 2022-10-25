@@ -1,0 +1,11 @@
+package com.Training.Clg_project;
+
+public class Feedback {
+	
+	private String fid;
+	private string studentName;
+	private String instructor;
+	private String subject;
+	private String fbValue;
+
+}
